@@ -4,6 +4,7 @@
 
 body {
   @apply min-h-screen flex flex-col;
+  @apply bg-[#f2f8fd];
 }
 
 #root {

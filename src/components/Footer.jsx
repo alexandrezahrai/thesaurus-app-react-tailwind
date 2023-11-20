@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
-export default function Footer({ link, name }) {
+export default function Footer({ link, name,className }) {
   const d = new Date();
   const year = d.getFullYear();
 
   return (
-    <footer>
-      <span className="block text-sm text-gray-500 text-center dark:text-gray-400">
+    <footer className={className}>
+      <span className="block text-sm text-gray-600 text-center">
         © {year}{" "}
         <a
           href={link}
