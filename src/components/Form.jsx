@@ -18,7 +18,7 @@ export default function Form({ onSubmit, value, onChange, onClick, onRemove }) {
           onChange={onChange}
           className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none relative"
         />
-        <button type="button" onClick={onRemove} className="w-4 h-full overflow-hidden absolute top-0 bottom-0 right-2.5 flex items-center">
+        <button type="button" onClick={onRemove} className="w-4 h-full overflow-hidden absolute top-0 bottom-0 right-2.5 flex items-center z-100">
           <span className="sr-only">Clear the input</span>
           <svg
             viewBox="0 0 1024 1024"

@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+svg {
+  width: 100%;
+}
+
 body {
   @apply min-h-screen flex flex-col;
   @apply bg-[#f2f8fd];
