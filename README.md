@@ -33,7 +33,7 @@ The app will be accessible at `http://localhost:5173` in your browser.
 
 ## Live Demo
 
-Check out the live demo of the Thesaurus App [here](https://your-demo-link.com).
+Check out the live demo of the Thesaurus App [here](thesaurus-app-react-tailwind).
 
 ## Contributing
 
