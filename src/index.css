@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply min-h-screen flex flex-col;
+}
+
+#root {
+  @apply flex-grow;
+  @apply grid place-content-center;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
