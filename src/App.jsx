@@ -5,11 +5,14 @@ import { useState } from "react";
 const API_URL = "https://api.datamuse.com";
 
 export default function App() {
+  // State
   const [word, setWord] = useState("");
   const [synonyms, setSynonyms] = useState([]);
 
+  // Variables
   const hasSynonyms = synonyms.length > 0;
 
+  // Handler functions
   const handleFetchSynonyms = (e) => {
     e.preventDefault();
 
@@ -23,6 +26,7 @@ export default function App() {
     setSynonyms([]);
   };
 
+  // Markup
   return (
     <div className="container py-10 md:py-[60px] lg:py-20">
       <section>
