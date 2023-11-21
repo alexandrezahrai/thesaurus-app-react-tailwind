@@ -13,6 +13,8 @@ export default function App() {
   const hasSynonyms = synonyms.length > 0;
 
   // Handler functions
+  const handleInputValue = (e) => setWord(e.target.value);
+
   const handleFetchSynonyms = (e) => {
     e.preventDefault();
 
@@ -41,7 +43,7 @@ export default function App() {
           <Form
             value={word}
             onSubmit={handleFetchSynonyms}
-            onChange={(e) => setWord(e.target.value)}
+            onChange={handleInputValue}
             onClick={handleFetchSynonyms}
             onRemove={handleRemoveInputText}
           />
