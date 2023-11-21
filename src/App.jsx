@@ -23,7 +23,7 @@ export default function App() {
       .then(setSynonyms);
   };
 
-  const handleRemoveInputText = () => {
+  const handleReset = () => {
     setWord("");
     setSynonyms([]);
   };
@@ -53,7 +53,7 @@ export default function App() {
             onSubmit={handleFetchSynonyms}
             onChange={handleWord}
             onClick={handleFetchSynonyms}
-            onRemove={handleRemoveInputText}
+            onRemove={handleReset}
           />
           {hasSynonyms ? (
             <ul className="text-center my-6 space-y-2">
@@ -63,7 +63,6 @@ export default function App() {
                     key={index}
                     onClick={() => {
                       handleNewWord(synonym);
-                      handleFetchSynonyms;
                     }}
                     className="cursor-pointer"
                   >
