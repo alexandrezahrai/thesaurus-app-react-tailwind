@@ -5,7 +5,7 @@ import { useState } from "react";
 const API_URL = "https://api.datamuse.com";
 
 export default function App() {
-  const [data, setData] = useState("");
+  const [word, setWord] = useState("");
   const [synonyms, setSynonyms] = useState([]);
 
   const hasSynonyms = synonyms.length > 0;
@@ -13,13 +13,13 @@ export default function App() {
   const handleFetchSynonyms = (e) => {
     e.preventDefault();
 
-    fetch(`${API_URL}/words?rel_syn=${data}`)
+    fetch(`${API_URL}/words?rel_syn=${word}`)
       .then((response) => response.json())
       .then(setSynonyms);
   };
 
   const handleRemoveInputText = () => {
-    setData("");
+    setWord("");
     setSynonyms([]);
   };
 
@@ -35,9 +35,9 @@ export default function App() {
           </p>
 
           <Form
-            value={data}
+            value={word}
             onSubmit={handleFetchSynonyms}
-            onChange={(e) => setData(e.target.value)}
+            onChange={(e) => setWord(e.target.value)}
             onClick={handleFetchSynonyms}
             onRemove={handleRemoveInputText}
           />
