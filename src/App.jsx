@@ -13,7 +13,7 @@ export default function App() {
   const hasSynonyms = synonyms.length > 0;
 
   // Handler functions
-  const handleInputValue = (e) => setWord(e.target.value);
+  const handleWord = (e) => setWord(e.target.value);
 
   const handleFetchSynonyms = (e) => {
     e.preventDefault();
@@ -26,6 +26,14 @@ export default function App() {
   const handleRemoveInputText = () => {
     setWord("");
     setSynonyms([]);
+  };
+
+  const handleNewWord = (synonym) => {
+    const updatedWord = synonym.word;
+    setWord(updatedWord);
+    fetch(`${API_URL}/words?rel_syn=${updatedWord}`)
+      .then((response) => response.json())
+      .then(setSynonyms);
   };
 
   // Markup
@@ -43,14 +51,25 @@ export default function App() {
           <Form
             value={word}
             onSubmit={handleFetchSynonyms}
-            onChange={handleInputValue}
+            onChange={handleWord}
             onClick={handleFetchSynonyms}
             onRemove={handleRemoveInputText}
           />
           {hasSynonyms ? (
             <ul className="text-center my-6 space-y-2">
               {synonyms.map((synonym, index) => {
-                return <li key={index}>{synonym.word}</li>;
+                return (
+                  <li
+                    key={index}
+                    onClick={() => {
+                      handleNewWord(synonym);
+                      handleFetchSynonyms;
+                    }}
+                    className="cursor-pointer"
+                  >
+                    {synonym.word}
+                  </li>
+                );
               })}
             </ul>
           ) : null}
