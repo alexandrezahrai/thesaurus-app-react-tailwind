@@ -7,6 +7,7 @@ Welcome to the Thesaurus App, a simple and intuitive web application built with 
 ## Features
 
 - **Search:** Easily find synonyms and related words for any given term.
+- **Interactive Results:** Click on a word to see its synonyms and explore further.
 - **Responsive Design:** Enjoy a seamless experience across various devices.
 
 ## Getting Started
@@ -30,6 +31,7 @@ The app will be accessible at `http://localhost:5173` in your browser.
 
 1. Enter a word in the search bar and press Enter.
 2. View the list of synonyms and related words.
+3. Click on a word to explore its synonyms.
 
 ## Live Demo
 
